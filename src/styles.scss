@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import '@fontsource/geist-sans/300.css';
+@import '@fontsource/geist-sans/400.css';
+@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/geist-sans/600.css';
+@import '@fontsource/geist-sans/700.css';
+@import '@fontsource/geist-sans/800.css';
+@import '@fontsource/geist-sans/900.css';
+
+body {
+  font-family: 'Geist Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+p {
+  line-height: 1.4rem;
+  letter-spacing: -.00875rem;
+}
+
+.list-item--active::before {
+  content: "";
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: -2.5px;
+  transform: scaleY(1);
+  background-color: #FBFBFB;
+  position: absolute;
+}

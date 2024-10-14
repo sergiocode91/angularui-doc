@@ -1,0 +1,47 @@
+<div class="grid grid-cols-[1fr_200px] gap-10">
+  <div class="flex flex-col text-secondary my-14 pt-10">
+    <div id="requirements">
+      <h2 class="text-xl font-bold">Requirements</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat,
+      impedit a nesciunt vel quis inventore, delectus voluptatum adipisci rerum
+      architecto quaerat vero voluptatibus reiciendis? Tempora sapiente dolores
+      eum provident!
+    </div>
+    <div id="optional-requirements">
+      <h2 class="text-xl font-bold">Optional requirements</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat,
+      impedit a nesciunt vel quis inventore, delectus voluptatum adipisci rerum
+      architecto quaerat vero voluptatibus reiciendis? Tempora sapiente dolores
+      eum provident!
+    </div>
+    <div id="installation-guide">
+      <h2 class="text-xl font-bold">Installation guide</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat,
+      impedit a nesciunt vel quis inventore, delectus voluptatum adipisci rerum
+      architecto quaerat vero voluptatibus reiciendis? Tempora sapiente dolores
+      eum provident!
+    </div>
+    <div id="install-library">
+      <h2 class="text-xl font-bold">Install library</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat,
+      impedit a nesciunt vel quis inventore, delectus voluptatum adipisci rerum
+      architecto quaerat vero voluptatibus reiciendis? Tempora sapiente dolores
+      eum provident!
+    </div>
+    <div id="install-tailwind">
+      <h2 class="text-xl font-bold">Install TailwindCSS</h2>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet repellat,
+      impedit a nesciunt vel quis inventore, delectus voluptatum adipisci rerum
+      architecto quaerat vero voluptatibus reiciendis? Tempora sapiente dolores
+      eum provident!
+    </div>
+    <app-footer />
+  </div>
+  <app-page-navigation [sections]="[
+    { id: 'requirements', label: 'Requirements', isChild: false },
+    { id: 'optional-requirements', label: 'Optional requirements', isChild: false },
+    { id: 'installation-guide', label: 'Installation guide', isChild: false },
+    { id: 'install-library', label: 'Install library', isChild: true },
+    { id: 'install-tailwind', label: 'Install TailwindCSS', isChild: true }
+  ]"></app-page-navigation>
+</div>

@@ -1,0 +1,25 @@
+<div class="top-14 pt-10 self-start sticky">
+  <h2 class="font-semibold text-primary mb-4">On this page</h2>
+  <ul class="font-medium text-secondary border-l border-primary">
+    @for (section of sections(); track $index) {
+      <li>
+        <a
+          (click)="scrollToSection(section.id)"
+          class="block font-medium cursor-pointer py-2 pl-4 pr-2 relative"
+          [ngClass]="{
+            'text-primary list-item--active': section.id === activeSection(),
+            'pl-8': section.isChild
+          }"
+        >
+          {{ section.label }}
+        </a>
+      </li>
+    }
+  </ul>
+  @if (showScrollToTop() === true) {
+    <button class="flex items-center font-semibold text-secondary hover:text-primary pt-4 gap-2" (click)="scrollToTop()">
+      <lucide-icon name="ArrowUp" [size]="20" />
+      Back to the top
+    </button>
+  }
+</div>
