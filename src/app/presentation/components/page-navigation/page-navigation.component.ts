@@ -15,37 +15,47 @@ export class PageNavigationComponent {
   public showScrollToTop = signal(false);
 
   constructor() {
-    window.addEventListener('scroll', this.onScroll.bind(this));
-
-    effect(() => {
-      this.updateActiveSection();
-    }, { allowSignalWrites: true });
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', this.onScroll.bind(this));
+  
+      effect(() => {
+        this.updateActiveSection();
+      }, { allowSignalWrites: true });
+    }
   }
 
   scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (typeof window !== 'undefined') {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
   updateActiveSection() {
-    let currentSection = '';
-    this.sections().forEach((section: any) => {
-      const element = document.getElementById(section.id);
-      if (element && window.scrollY >= element.offsetTop - 100) {
-        currentSection = section.id;
-      }
-    });
-    this.activeSection.set(currentSection);
+    if (typeof window !== 'undefined') {
+      let currentSection = '';
+      this.sections().forEach((section: any) => {
+        const element = document.getElementById(section.id);
+        if (element && window.scrollY >= element.offsetTop - 100) {
+          currentSection = section.id;
+        }
+      });
+      this.activeSection.set(currentSection);
+    }
   }
 
   onScroll() {
-    this.showScrollToTop.set(window.scrollY > 1);
+    if (typeof window !== 'undefined') {
+      this.showScrollToTop.set(window.scrollY > 1);
+    }
   }
 
   scrollToSection(sectionId: string) {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      this.activeSection.set(sectionId);
+    if (typeof window !== 'undefined') {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+        this.activeSection.set(sectionId);
+      }
     }
   }
 }

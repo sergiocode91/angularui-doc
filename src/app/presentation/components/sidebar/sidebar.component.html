@@ -1,12 +1,26 @@
-<div class="flex flex-col top-14 pt-10 bg-zinc-800 self-start sticky">
-  <p>
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente aliquam
-    accusamus, assumenda et id voluptate error illo praesentium sed
-    repellendus architecto quam tempore, asperiores voluptatum temporibus
-    adipisci. Placeat, numquam eum.
-    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente aliquam
-    accusamus, assumenda et id voluptate error illo praesentium sed
-    repellendus architecto quam tempore, asperiores voluptatum temporibus
-    adipisci. Placeat, numquam eum.
-  </p>
+<div class="flex flex-col top-14 pt-10 gap-10 self-start sticky">
+  <div>
+    <h5 class="font-semibold text-primary mb-4">Getting started</h5>
+    <ul class="font-medium text-secondary border-l border-primary">
+      @for (getting of gettingStarted(); track $index) {
+        <li class="list-item">
+          <a [routerLink]="getting.path" routerLinkActive="text-primary list-item--active" class="block font-medium hover:text-primary cursor-pointer py-2 pl-4 pr-2 transition-all duration-300 relative">
+            {{ getting.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
+  <div>
+    <h5 class="font-semibold text-primary mb-4">Components</h5>
+    <ul class="font-medium text-secondary border-l border-primary">
+      @for (component of components(); track $index) {
+        <li class="list-item">
+          <a [routerLink]="component.path" routerLinkActive="text-primary list-item--active" class="block font-medium hover:text-primary cursor-pointer py-2 pl-4 pr-2 transition-all duration-300 relative">
+            {{ component.label }}
+          </a>
+        </li>
+      }
+    </ul>
+  </div>
 </div>
